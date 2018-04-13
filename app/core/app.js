@@ -1,17 +1,18 @@
 (function(){
 
-    angular.module('app', [
-        /* shared modules */
-        'app.core',
-
-        /* feature areas */
-        'app.dashboard'
-    ]);
-
     angular
-        .module('app')
+        .module('app', [
+            /* shared modules */
+            'app.core',
+
+            /* feature areas */
+            'app.dashboard',
+            'app.students'
+        ])
         .config(config);
 
+    /* ------------------------------------------------ */
+    
     function config($stateProvider, $urlRouterProvider){
         $stateProvider
             .state('app', {
@@ -19,7 +20,7 @@
                 url: '/',
                 template: '<ui-view />',
             });
-            
+
         $urlRouterProvider.otherwise('/dashboard');
     }
 

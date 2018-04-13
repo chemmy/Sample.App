@@ -1,14 +1,14 @@
 (function(){
 
-    angular.module('app.dashboard', [
-        'app.core'
-    ]);
-
     angular
-        .module('app.dashboard')
+        .module('app.dashboard', [
+            'app.core'
+        ])
         .config(config);
 
-    function config($stateProvider, $urlRouterProvider) {
+    /* ------------------------------------------------ */
+    
+    function config($stateProvider) {
         $stateProvider
             .state('app.dashboard', {
                 url: 'dashboard',
