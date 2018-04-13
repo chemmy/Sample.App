@@ -4,7 +4,7 @@
             <h1>Students Page</h1>
         </div>
         <div class="col-md-3 pull-right">
-            <button class="btn btn-success pull-right" ui-sref="app.students.new">
+            <button class="btn btn-add pull-right" ui-sref="app.students.new">
                 <i class="fa fa-plus"></i> Add Student
             </button>
         </div>
@@ -17,8 +17,7 @@
                     <th>Student ID</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -27,12 +26,14 @@
                     <td ng-click="goToStudent(student)">{{ student.student_code }}</td>
                     <td ng-click="goToStudent(student)">{{ student.first_name }}</td>
                     <td ng-click="goToStudent(student)">{{ student.last_name }}</td>
-                    <td ng-click="goToEdit(student)"><button class="btn btn-primary btn-xs row-btn">
-                        <i class="fa fa-pencil"></i>
-                    </button></td>
-                    <td ng-click="deleteStudent(student)"><button class="btn btn-danger btn-xs row-btn">
-                        <i class="fa fa-times"></i>
-                    </button></td>
+                    <td class="btn-tools">
+                        <button ng-click="goToEdit(student)" class="btn btn-success btn-xs row-btn">
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                        <button ng-click="deleteStudent(student)" class="btn btn-danger btn-xs row-btn">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

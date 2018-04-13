@@ -144,10 +144,15 @@ body {
 }
 
 .content-tbl .btn {
-    display: block;
-    margin: 0 auto;
+    margin: 0 5px;
 }
 
-.content-tbl th {
-    text-align: center;
+.content-header .btn-add {
+    background-color: #5b9bd1;
+    color: white;
+}
+
+.content-tbl table td.btn-tools{
+    width: 1%;
+    white-space: nowrap;
 }
