@@ -78,3 +78,31 @@ body {
     border-left: 2px solid #5b9bd1;
     margin-left: -2px;
 }
+
+/* P A G E */
+
+.page-content {
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
+}
+
+.page-content label {
+    font-weight: normal;
+}
+
+/* dashboard */
+#page-dashboard {
+    text-align: center;
+    color: #7b7b7b;
+}
+
+#page-dashboard h1 {
+    font-size: 48px;
+    font-weight: bolder;
+    margin-top: 130px;
+}
+
+#page-dashboard h3 {
+    margin-top: 10px;
+}
