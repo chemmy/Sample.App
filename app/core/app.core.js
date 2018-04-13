@@ -6,7 +6,8 @@
         /* cross-application modules */
 
         /* third party modules */
-        'ui.router'
+        'ui.router',
+        'ui.bootstrap'
     ])
 
 })();

@@ -90,6 +90,10 @@ body {
     font-weight: normal;
 }
 
+.page-pagination {
+    text-align: center;
+}
+
 /* dashboard */
 #page-dashboard {
     text-align: center;
