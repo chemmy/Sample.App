@@ -1,0 +1,40 @@
+<div  class="page-content">
+    <div class="row content-header">
+        <div class="col-md-6">
+            <h1>Students Page</h1>
+        </div>
+        <div class="col-md-3 pull-right">
+            <button class="btn btn-success pull-right" ui-sref="app.students.new">
+                <i class="fa fa-plus"></i> Add Student
+            </button>
+        </div>
+    </div>
+    <div class="content-tbl">
+        <table class="table" at-table at-list="vm.allStudents">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student ID</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat = "student in vm.allStudents">
+                    <td>{{ student.id }}</td>
+                    <td ng-click="goToStudent(student)">{{ student.student_code }}</td>
+                    <td ng-click="goToStudent(student)">{{ student.first_name }}</td>
+                    <td ng-click="goToStudent(student)">{{ student.last_name }}</td>
+                    <td ng-click="goToEdit(student)"><button class="btn btn-primary btn-xs row-btn">
+                        <i class="fa fa-pencil"></i>
+                    </button></td>
+                    <td ng-click="deleteStudent(student)"><button class="btn btn-danger btn-xs row-btn">
+                        <i class="fa fa-times"></i>
+                    </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> 
+</div>
