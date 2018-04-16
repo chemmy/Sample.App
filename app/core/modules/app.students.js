@@ -21,5 +21,11 @@
                 controller: 'StudentsController',
                 controllerAs: 'vm'
             })
+            .state('app.students.new', {
+                url: '/new',
+                templateUrl: 'modules/students/new-student.html',
+                controller: 'StudentController',
+                controllerAs: 'vm'
+            })
     }
 })();

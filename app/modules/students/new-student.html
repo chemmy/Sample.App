@@ -1,0 +1,14 @@
+<form name="studentform" class="form-horizontal" role="form">
+    <div class="row content-header">
+        <h1>Add new student</h1>
+    </div>
+
+    <ng-include src="'modules/students/_fields-students.html'"></ng-include>
+
+    <div class="row form-buttons">
+        <div class="col-sm-9 text-right">
+            <button class="btn btn-primary" type="submit" 
+                ng-disabled="studentform.$invalid" ng-click="vm.addStudent()">Save</button>
+        </div>
+    </div>
+</form>
