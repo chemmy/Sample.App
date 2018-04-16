@@ -9,11 +9,13 @@
         var vm = this;
         vm.pageStudents = [];
         vm.pagination = {
-            numPages: 0,
             currentPage: 1,
             numPerPage: 10,
             maxSize: 5
         };
+        vm.goToStudent = goToStudent;
+        vm.goToEdit = goToEdit;
+        vm.deleteStudent = deleteStudent;
 
         activate();
 
@@ -26,11 +28,24 @@
         function getAllStudents() {
             StudentsService.getAllStudents().then(function(data){
                 if(data.success!==false){
-                    vm.allStudents = data;                   
-                    getPageStudents();
-                    vm.pagination.numPages = Math.ceil(vm.allStudents.length / vm.pagination.numPerPage); 
+                    vm.allStudents = data;
+                    getPageStudents(); 
                 }
             });
+        }
+
+        function deleteStudent(student) {
+            StudentsService.deleteStudent(student);
+        }
+
+        // routing
+
+        function goToStudent(studentId) {
+            StudentsService.goToStudentPage(studentId);
+        }
+
+        function goToEdit(studentId) {
+            StudentsService.goToEditPage(studentId);
         }
 
         // watches 

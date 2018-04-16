@@ -1,0 +1,14 @@
+<form name="studentform" class="form-horizontal" role="form" data-ng-init="vm.init()">
+    <div class="row content-header">
+        <h1>Edit Student</h1>
+    </div>
+
+    <ng-include src="'modules/students/_fields-students.html'"></ng-include>
+    <div class="row form-buttons">
+        <div class="col-sm-9 text-right">
+            <button class="btn btn-primary" type="button" 
+                ng-disabled="studentform.$invalid" ng-click="vm.updateStudent()">Update</button>
+            <button class="btn btn-danger" ng-click="vm.deleteStudent()">Delete</button>
+        </div>
+    </div>
+</form>

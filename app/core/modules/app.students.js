@@ -13,7 +13,6 @@
             .state('app.students', {
                 abstract: true,
                 url: 'students',
-                template: '<ui-view />',
             })
             .state('app.students.all', {
                 url: '',
@@ -24,6 +23,18 @@
             .state('app.students.new', {
                 url: '/new',
                 templateUrl: 'modules/students/new-student.html',
+                controller: 'StudentController',
+                controllerAs: 'vm'
+            })
+            .state('app.students.show', {
+                url: '/:id',
+                templateUrl: 'modules/students/show-student.html',
+                controller: 'StudentController',
+                controllerAs: 'vm'
+            })
+            .state('app.students.edit', {
+                url: '/:id/edit',
+                templateUrl: 'modules/students/edit-student.html',
                 controller: 'StudentController',
                 controllerAs: 'vm'
             })

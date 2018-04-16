@@ -9,7 +9,7 @@
     </div>
 </div>
 <div class="content-tbl">
-    <table class="table" at-table at-list="allStudents">
+    <table class="table" at-table at-list="vm.allStudents">
         <thead>
             <tr>
                 <th>ID</th>
@@ -22,14 +22,14 @@
         <tbody>
             <tr ng-repeat = "student in vm.pageStudents">
                 <td>{{ student.id }}</td>
-                <td ng-click="goToStudent(student)">{{ student.student_code }}</td>
-                <td ng-click="goToStudent(student)">{{ student.first_name }}</td>
-                <td ng-click="goToStudent(student)">{{ student.last_name }}</td>
+                <td ng-click="vm.goToStudent(student.id)">{{ student.student_code }}</td>
+                <td ng-click="vm.goToStudent(student.id)">{{ student.first_name }}</td>
+                <td ng-click="vm.goToStudent(student.id)">{{ student.last_name }}</td>
                 <td class="btn-tools">
-                    <button ng-click="goToEdit(student)" class="btn btn-success btn-xs row-btn">
+                    <button ng-click="vm.goToEdit(student.id)" class="btn btn-success btn-xs row-btn">
                         <i class="fa fa-pencil"></i>
                     </button>
-                    <button ng-click="deleteStudent(student)" class="btn btn-danger btn-xs row-btn">
+                    <button ng-click="vm.deleteStudent(student)" class="btn btn-danger btn-xs row-btn">
                         <i class="fa fa-times"></i>
                     </button>
                 </td>
@@ -38,7 +38,7 @@
     </table>
 
     <div class="page-pagination">
-        <ul uib-pagination total-items="vm.pagination.numPages" 
+        <ul uib-pagination total-items="vm.allStudents.length" 
             ng-model="vm.pagination.currentPage" max-size="vm.pagination.maxSize"
             boundary-links="true" force-ellipses="true" class="pagination-sm" 
             previous-text="&lsaquo;" next-text="&rsaquo;" 
