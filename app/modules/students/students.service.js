@@ -4,8 +4,8 @@
         .module('app.students')
         .service('StudentsService', StudentsService);
 
-    StudentsService.$inject = ['$http', '$state', 'API'];
-    function StudentsService($http, $state, API) {
+    StudentsService.$inject = ['$http', '$state', 'API', 'FORM_CONST', 'exception', 'alert'];
+    function StudentsService($http, $state, API, FORM_CONST, exception, alert) {
         var services = {
             getAllStudents : getAllStudents,
             getStudentByID : getStudentByID,
@@ -25,11 +25,9 @@
             return $http.get(url)
                 .then(function(response){
                     return response.data;
-                }, function(error) {
-                    return {
-                        success: false,
-                        message: "Unable to retrieve students. Please try again later."
-                    }
+                })
+                .catch(function(error) {
+                    return exception.showError(FORM_CONST.API_FETCH_FAILED, error.data);
                 });
         }
 
@@ -39,6 +37,9 @@
             return $http.get(url)
                 .then(function(response){
                     return response.data;
+                })
+                .catch(function(error) {
+                    return exception.showError(FORM_CONST.API_FETCH_FAILED, error.data);
                 });
         }
 
@@ -51,12 +52,11 @@
                 data    : student
             })
             .then(function(data) {
-                if (data.errors) {
-                    console.log(data.errors);
-                } else {
-                    alert("Student - successfully added!");
-                    goToStudentPage(data.data.id);
-                }
+                alert.showSuccess("Student - successfully added!");
+                goToStudentPage(data.data.id);
+            })
+            .catch(function(error) {
+                return exception.showError(FORM_CONST.API_ACTION_FAILED, error.data);
             });
         }
 
@@ -69,12 +69,11 @@
                 data    : student
             })
             .then(function(data) {
-                if (data.errors) {
-                    console.log(data.errors);
-                } else {
-                    alert("Student - successfully updated!");
-                    goToStudentPage(data.data.id);
-                }
+                alert.showSuccess("Student - successfully updated!");
+                goToStudentPage(data.data.id);
+            })
+            .catch(function(error) {
+                return exception.showError(FORM_CONST.API_ACTION_FAILED, error.data);
             });
         }
 
@@ -87,12 +86,11 @@
                 data    : student
             })
             .then(function(data) {
-                if (data.errors) {
-                    console.log(data.errors);
-                } else {
-                    alert("Student - successfully deleted!");
-                    $state.reload();
-                }
+                alert.showSuccess("Student - successfully deleted!");
+                $state.reload();
+            })
+            .catch(function(error) {
+                return exception.showError(FORM_CONST.API_ACTION_FAILED, error.data);
             });
         }
 
