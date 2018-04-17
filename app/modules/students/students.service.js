@@ -9,6 +9,7 @@
         var services = {
             getAllStudents : getAllStudents,
             getStudentByID : getStudentByID,
+            getTempLectures : getTempLectures,          // remove once api is fixed
             addStudent : addStudent,
             updateStudent : updateStudent,
             deleteStudent : deleteStudent,
@@ -16,6 +17,8 @@
             goToEditPage : goToEditPage
         }
         return services;
+
+        var tempStudent = {};
         
         // main functions
 
@@ -102,6 +105,14 @@
 
         function goToEditPage(studentId) {
             $state.go("app.students.edit", {id: studentId});
+        }
+
+        function getTempLectures() {                    // remove once api is fixed
+            var url = "test/data/lecture.txt";
+            return $http.get(url)
+                .then(function(response){
+                    return response.data;
+                });
         }
     }
 })();

@@ -156,3 +156,18 @@ body {
     width: 1%;
     white-space: nowrap;
 }
+
+/* show */
+
+.tbl-data {
+    margin-top: 50px;
+}
+
+.tbl-data tbody td {
+    font-size: 13px;
+}
+
+.tbl-data h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+}

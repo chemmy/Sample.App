@@ -9,7 +9,6 @@
         var vm = this;
 
         vm.state = $state.current.name;
-        vm.isShowOnly = true;
         vm.student = {};
         vm.init = init;
         vm.addStudent = addStudent;
@@ -20,7 +19,6 @@
 
         function init() {
             var currStudentId = $stateParams.id;
-            vm.isShowOnly = false;
             getStudent(currStudentId)
         }
 
@@ -40,8 +38,15 @@
 
         function getStudent(studentId) {
             StudentsService.getStudentByID(studentId).then(function(data){
-                vm.student = data
+                vm.student = data;
+                getTempLectures();
             });
+        }
+        
+        function getTempLectures() {                    // remove once api is fixed
+            StudentsService.getTempLectures().then(function(data){
+                vm.student.lectures = data.data;
+            });          
         }
     }
 })();

@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "lecture_id": 1,
+            "subject_name": "English",
+            "teacher_id": 1,
+            "teacher_name": "Cirillo Kierans",
+            "room": "Room A",
+            "schedule": "08:00 AM - 10:00 AM"
+        },
+        {
+            "lecture_id": 2,
+            "subject_name": "Math",
+            "teacher_id": 3,
+            "teacher_name": "Johanna Probate",
+            "room": "Room C",
+            "schedule": "08:00 AM - 10:00 AM"
+        },
+        {
+            "lecture_id": 3,
+            "subject_name": "Science",
+            "teacher_id": 2,
+            "teacher_name": "Mitchell Peete",
+            "room": "Room B",
+            "schedule": "08:00 AM - 10:00 AM"
+        },
+        {
+            "lecture_id": 4,
+            "subject_name": "Philosophy",
+            "teacher_id": 1,
+            "teacher_name": "Cirillo Kierans",
+            "room": "Room D",
+            "schedule": "08:00 AM - 10:00 AM"
+        },
+        {
+            "lecture_id": 5,
+            "subject_name": "History",
+            "teacher_id": 2,
+            "teacher_name": "Mitchell Peete",
+            "room": "Room E",
+            "schedule": "08:00 AM - 10:00 AM"
+        }
+    ]
+}

@@ -4,4 +4,27 @@
     </div>
 
     <ng-include src="'modules/students/_fields-students.html'"></ng-include>
+
+    <div class="content-tbl tbl-data">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Lecture ID</th>
+                    <th>Subject</th>
+                    <th>Teacher</th>
+                    <th>Room</th>
+                    <th>Schedule</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat = "lecture in vm.student.lectures">
+                <tr ng-click="goToLecture(lecture)">
+                    <td>{{ lecture.lecture_id }}</td>
+                    <td>{{ lecture.subject_name }}</td>
+                    <td>{{ lecture.teacher_name }}</td>
+                    <td>{{ lecture.room }}</td>
+                    <td>{{ lecture.schedule }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </form>
