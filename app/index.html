@@ -7,13 +7,15 @@
         <!-- stylesheets -->
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../bower_components/angular-confirm/dist/angular-confirm.min.css">
         <link rel="stylesheet" href="assets/css/custom.css">
         
         <!-- packages -->
-        <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/angular/angular.js"></script>
         <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+        <script src="../bower_components/angular-confirm/dist/angular-confirm.min.js"></script>
         
         <!-- core -->
         <script type="text/javascript" src="core/app.js"></script>
@@ -21,6 +23,8 @@
         <script type="text/javascript" src="core/config/constants.config.js"></script>
         
         <!-- modules -->
+        <script type="text/javascript" src="blocks/exception/exception.js"></script>
+        <script type="text/javascript" src="blocks/alert/alert.js"></script>
         <script type="text/javascript" src="core/modules/app.dashboard.js"></script>
         <script type="text/javascript" src="core/modules/app.students.js"></script>
     
@@ -32,6 +36,9 @@
         <!-- services -->
         <script type="text/javascript" src="modules/students/students.service.js"></script>
 
+        <!-- blocks -->
+        <script type="text/javascript" src="blocks/exception/exception.service.js"></script>
+        <script type="text/javascript" src="blocks/alert/alert.service.js"></script>
 
         <title>Sample App</title>
     </head>
